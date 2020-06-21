@@ -1,4 +1,10 @@
-body {
-  padding: 1%;
-  width: 40rem;
+.container {
+  width: 18rem;
+  border: 1px solid black;
+}
+.formBox {
+  margin: 1%;
+}
+.resultBox {
+  margin: 1%;
 }
