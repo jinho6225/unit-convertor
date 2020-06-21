@@ -1,13 +1,3 @@
-// var code =
-//   'var bodyText = document.querySelector("body").innerText;alert(bodyText);';
-// chrome.tabs.executeScript({ code: code });
-
-// let btn = document.querySelector('.subBtn');
-// btn.addEventListener('click', () => {
-//   let unit = document.querySelector('#unitConvertor');
-//   document.querySelector('#resultTarget').innerText = `${number}`;
-// });
-
 document.addEventListener(
   'input',
   function (event) {
@@ -30,9 +20,17 @@ btn.addEventListener('click', (e) => {
   let unit = document.querySelector('#unitConvertor').value;
   let number = document.querySelector('.enteredNum').value;
   if (map[unit]) {
-    alert(map[unit]);
+    if (unit === 'kg') {
+      number = number * 2.20462;
+    } else if (unit === 'lbs') {
+      number = number * 0.453592;
+    } else if (unit === 'cm') {
+      number = number * 0.393701;
+    } else if (unit === 'inch') {
+      number = number * 2.54;
+    }
   }
 
-  document.querySelector('#resultTarget').innerText = `${number}`;
+  document.querySelector('#resultTarget').innerText = `${number.toFixed(2)}`;
   document.querySelector('.matchingUnit').innerText = `${map[unit]}`;
 });
